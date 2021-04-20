@@ -2,6 +2,7 @@
 body {
     background-color: grey;
 }
+
 .gameContainer {
     border: 2px solid red;
     display: flex;
