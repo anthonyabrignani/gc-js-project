@@ -1,0 +1,19 @@
+.gameContainer {
+    border: 2px solid red;
+    display:flex;
+}
+.cardContainer {
+    border: 2px solid black;
+    display:flex;
+    flex-wrap: wrap;
+}
+.cards {
+    height: 50px;
+    width: 50px;
+    border: 2px solid black;
+    margin: 20px;
+}
+
+.buttonContainer {
+    border: 2px solid black;
+}
