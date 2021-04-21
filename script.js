@@ -9,6 +9,15 @@ let firstCard, secondCard;
 
 console.log(cards);
 
+(function  shuffleCards() {
+    cards.forEach(card => {
+        let randomPos = Math.floor(Math.random() * 20);
+        card.style.order = randomPos;
+    });
+})();
+
+console.log(cards);
+
 start.addEventListener('click', pad => {
     var sec = 0;
     function pad(val) {return val>9 ? val : "0" + val;}
