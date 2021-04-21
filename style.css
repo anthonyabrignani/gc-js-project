@@ -44,16 +44,33 @@ header {
 }
 .cards {
     height: 200px;
-    width: 200px;
-    border: 2px solid black;
+    width: 170px;
+    border-radius: 10px;
     margin: 10px;
     position: relative;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+.cards.flip {
+    transform: rotateY(180deg);
+}
+
+.card-front {
+    transform: rotateY(180deg);
+    border-radius: 10px;
+}
+
+.card-back {
+    border-radius: 10px;
 }
 
 .card-front, .card-back {
     height: 100%;
     width: 100%;
     position: absolute;
+    backface-visibility: hidden;
 }
 
 .buttonContainer {

@@ -3,6 +3,9 @@ let reset = document.getElementById("reset");
 let timer = document.getElementById("counter");
 let minutes = document.getElementById("minutes");
 let seconds = document.getElementById("seconds");
+let cards = document.querySelectorAll(".cards")
+
+console.log(cards);
 
 start.addEventListener('click', pad => {
     var sec = 0;
@@ -13,7 +16,15 @@ start.addEventListener('click', pad => {
     }, 1000);
 });
 
+function flipCards () {
+    this.classList.toggle("flip");
+}
+
+cards.forEach(card => card.addEventListener("click", flipCards));
+
 reset.addEventListener('click', event => {
     document.location.reload(event);
 });
+
+
 
