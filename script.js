@@ -3,7 +3,9 @@ let reset = document.getElementById("reset");
 let timer = document.getElementById("counter");
 let minutes = document.getElementById("minutes");
 let seconds = document.getElementById("seconds");
-let cards = document.querySelectorAll(".cards")
+let cards = document.querySelectorAll(".cards");
+let hasFlippedCard = false;
+let firstCard, secondCard;
 
 console.log(cards);
 
@@ -17,7 +19,13 @@ start.addEventListener('click', pad => {
 });
 
 function flipCards () {
-    this.classList.toggle("flip");
+    //find "cards" 
+    //adds class flip to what we are clicking on so "this" ="cards"
+    this.classList.add("flip");
+    if (!hasFlipped) {
+        hasFlippedCard = true;
+        firstCard =this;
+    }
 }
 
 cards.forEach(card => card.addEventListener("click", flipCards));
