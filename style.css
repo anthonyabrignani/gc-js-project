@@ -2,20 +2,15 @@
     margin: 0;
 }
 
-@font-face {
-    font-family: "PokemonHollow";
-    src: url("font/PokemonHollow.ttf");
-}
-
 h1 {
-    font-family: "PokemonHollow";
+    font-family: 'Permanent Marker', cursive;
     text-align: center;
-    color:gold;
+    color: royalblue;
     font-size: 3em;
 }
 
 body {
-    overflow: hidden;
+    overflow: visible;
     background-color: grey;
     height: 100vh;
     width: 100vw;
