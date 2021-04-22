@@ -43,7 +43,6 @@ header {
     height: 180px;
     width: 150px;
     border-radius: 10px;
-    margin: 20px;
     position: relative;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
     transform-style: preserve-3d;
