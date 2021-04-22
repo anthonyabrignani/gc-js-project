@@ -64,10 +64,19 @@ function checkforMatch () {
 
 // function to remove event listener if a match
 function disableCards() {
-    firstCard.removeEventListener('click', flipCard);
-    secondCard.removeEventListener('click', flipCard);
-
+    firstCard.removeEventListener('click', flipCards);
+    secondCard.removeEventListener('click', flipCards);
+    removeMatch();
     resetBoard();
+}
+
+function removeMatch () {
+    if (firstCard.dataset.match === secondCard.dataset.match) {
+        setTimeout(() => {
+        firstCard.remove('div');
+        secondCard.remove('div');
+}, 2000);
+}
 }
 
 // if not a match, remove the class flip to flip cards back over
