@@ -33,6 +33,7 @@ header {
     width: 100%;
     flex-direction:column;
     justify-content: space-evenly;
+    
 
 }
 .cardContainer {
@@ -41,8 +42,9 @@ header {
     align-items: auto;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
+    margin-right: 50px;
 
 }
 .cards {
@@ -73,6 +75,7 @@ header {
     width: 100%;
     position: absolute;
     backface-visibility: hidden;
+    
 }
 
 .buttonContainer {
