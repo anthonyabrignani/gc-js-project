@@ -29,12 +29,14 @@ start.addEventListener('click', pad => {
         document.getElementById("seconds").innerHTML=pad(++sec%60);
         document.getElementById("minutes").innerHTML=pad(parseInt(sec/60,10));
     }, 1000);
-});
+
 
 // function to flip cards over
 function flipCards () {
     // if board is unlocked, run this function to flip cards
     if (lockBoard) return;
+    // if current clicked card is equal to the firstCard, return positive
+    if (this === firstCard) return;
     // adds class flip to what we are clicking on so "this" ="cards"
     this.classList.add("flip");
     // selects the first card to be flipped
@@ -45,7 +47,6 @@ function flipCards () {
     }
 
     secondCard = this;
-    hasFlippedCard = false;
 
     checkforMatch();
 }
@@ -65,6 +66,8 @@ function checkforMatch () {
 function disableCards() {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
+
+    resetBoard();
 }
 
 // if not a match, remove the class flip to flip cards back over
@@ -75,9 +78,14 @@ function unflipCards() {
         firstCard.classList.remove('flip');
         secondCard.classList.remove('flip');
 // after cards are flipped over, the board is set to unlocked
-        lockBoard = false;
+       resetBoard();
 // 2000 refers to milliseconds between flip (2 seconds)
     }, 2000);
+}
+
+function resetBoard() {
+    [hasFlippedCard, lockBoard] = [false, false];
+    [firstCard, secondCard] = [null, null];
 }
 
 // event listener for when clicked, card will flip
@@ -88,5 +96,6 @@ reset.addEventListener('click', event => {
     document.location.reload(event);
 });
 
+});
 
 
